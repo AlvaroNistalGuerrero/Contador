@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             BigInteger mil = BigInteger.valueOf(1000);
             BigInteger cantidad = cont.divide(mil);
             añadeTexto = cantidad + " K";
-            if(cont.compareTo(new BigInteger("1000000"))>= 0){
+            if(cont.compareTo(new BigInteger("1000000"))>=0 && cont.compareTo(new BigInteger("99999999999"))<=0){      // Si no
                 BigInteger Mill = new BigInteger("1000000");
                 BigInteger cantidad_2 = cont.divide(Mill);
                 añadeTexto = cantidad_2 + " Mill";
