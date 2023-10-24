@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/textcontador"
-        android:layout_width="368dp"
-        android:layout_height="131dp"
+        android:layout_width="392dp"
+        android:layout_height="150dp"
         android:gravity="center"
         android:text="0"
         android:textColor="#b5b5b5"
@@ -25,7 +25,7 @@
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonSalir"
         android:layout_width="139dp"
         android:layout_height="60dp"
         android:backgroundTint="#585858"
@@ -42,81 +42,37 @@
 
         />
 
-    <LinearLayout
-        android:layout_width="344dp"
-        android:layout_height="265dp"
-        android:layout_margin="15dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623">
-
-        <TextView
-            android:layout_width="191dp"
-            android:layout_height="wrap_content"
-            android:background="#3c3c3c"
-            android:gravity="center"
-            android:text="Mejoras"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <LinearLayout
-            android:layout_width="272dp"
-            android:layout_height="186dp">
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="139dp"
-                android:layout_height="71dp"
-                android:layout_marginLeft="0dp"
-                android:backgroundTint="#585858"
-                android:onClick="mejora1"
-                android:text="100 pokemons"
-                android:textColor="#FFFF"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.378"
-
-                />
-
-            <TextView
-                android:layout_width="91dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="22dp"
-                android:layout_marginTop="-1dp"
-                android:layout_marginBottom="10dp"
-                android:background="#3c3c3c"
-                android:gravity="center"
-                android:text="x2 de captura"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/pokeball_image"
         android:layout_width="170dp"
         android:layout_height="142dp"
+        android:contentDescription="pokeball"
         android:onClick="sumar"
         android:src="@drawable/poke"
-        android:contentDescription="pokeball"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintVertical_bias="0.321" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="255dp"
+        android:layout_height="152dp"
+        android:backgroundTint="#585858"
+        android:onClick="IrMenuDeMejoras"
+        android:text="MEJORAS"
+        android:textColor="#FFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.657"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
