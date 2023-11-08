@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Contador" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Contador" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    <style name="Theme.Contador" parent="Base.Theme.Contador">
 
-    <style name="Theme.Contador" parent="Base.Theme.Contador" />
+    </style>
 </resources>

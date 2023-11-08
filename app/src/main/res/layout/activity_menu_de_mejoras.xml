@@ -7,7 +7,6 @@
     tools:context=".MenuDeMejoras"
     android:background="#3c3c3c"
     >
-
     <TextView
         android:id="@+id/image_name"
         android:layout_width="392dp"
@@ -22,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.744" />
-
     <Button
         android:id="@+id/atras"
         android:layout_width="374dp"
@@ -40,8 +38,6 @@
         app:layout_constraintVertical_bias="0.976"
 
         />
-
-
     <LinearLayout
         android:layout_width="344dp"
         android:layout_height="265dp"
@@ -55,7 +51,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.109">
-
         <TextView
             android:layout_width="191dp"
             android:layout_height="wrap_content"
@@ -75,7 +70,7 @@
                 android:layout_height="71dp"
                 android:layout_marginLeft="0dp"
                 android:backgroundTint="#585858"
-                android:onClick="retornaMejora1"
+                android:onClick="mejora1"
                 android:text="100 pokemons"
                 android:textColor="#FFFF"
                 android:textSize="15sp"

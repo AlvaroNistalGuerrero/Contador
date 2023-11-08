@@ -6,6 +6,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -24,10 +26,12 @@ import android.os.Bundle;
 
 import java.math.BigInteger;
 import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MainActivity extends AppCompatActivity {   // implements  MenuDeMejoras.MenuDeMejorasCallbackº
+public class MainActivity extends AppCompatActivity {
 
     TextView contador;
     Button botonMejora1;
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity {   // implements  MenuDeMej
     int incremento = 1;
     int mejoras;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,19 +53,19 @@ public class MainActivity extends AppCompatActivity {   // implements  MenuDeMej
         botonMejora1 = (Button) findViewById(R.id.button1);
         contador = (TextView) findViewById(R.id.textcontador);
         buttonSalir = (Button) findViewById(R.id.buttonSalir);
+        contador.setText("" + cont);
+        segundero();
+        /*
+        Bloque del recyvledView
+         */
 
-//        Bundle extras = getIntent().getExtras();
-//        mejoras = extras.getInt("update");
+
 
 //        if(extras.isEmpty()){ // estoy entrando al activty main por primera vez y no tengo que cargar datos,,, isEmpty es como un == null
 //            //hay que mirar la memoria interna y poner cuantas monedas teniamos la ultima vez
 //        }else{
 //
 //        }
-        contador.setText("" + cont);
-        segundero();
-
-
 
     }
 
@@ -71,10 +77,12 @@ public class MainActivity extends AppCompatActivity {   // implements  MenuDeMej
     public void IrMenuDeMejoras(View v) {
         Intent intent = new Intent(this, MenuDeMejoras.class);
         intent.putExtra("pts" ,contador.getText());
-        intent.putExtra("update" , mejora1());
-//        intent.putExtra("update", botonMejora1.getText());
-//        intent.putExtra("mejora1", botonMejora1.getText());
+        intent.putExtra("update", botonMejora1.getText());
         startActivity(intent);
+    }
+    public void irRecycledView(View v){
+        Intent i = new Intent(this, Recycled_vista.class);    // Intent se usa para hacer un salto de actividad
+        startActivity(i);
     }
 
 
@@ -146,7 +154,4 @@ public class MainActivity extends AppCompatActivity {   // implements  MenuDeMej
         });
     }
 
-//    @Override
-//    public void displayMejoras() {
-//    }
 }

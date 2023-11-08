@@ -59,8 +59,8 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="255dp"
-        android:layout_height="152dp"
+        android:layout_width="262dp"
+        android:layout_height="147dp"
         android:backgroundTint="#585858"
         android:onClick="IrMenuDeMejoras"
         android:text="MEJORAS"
@@ -68,11 +68,28 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657"
 
-        />
+        app:layout_constraintVertical_bias="0.576" />
+
+    <Button
+        android:id="@+id/ranking"
+        android:layout_width="152dp"
+        android:layout_height="61dp"
+        android:backgroundTint="#585858"
+        android:onClick="irRecycledView"
+        android:text="RANKING"
+        android:textColor="#FFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
