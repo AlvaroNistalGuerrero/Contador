@@ -13,9 +13,8 @@ public class JugadorViewHolder extends RecyclerView.ViewHolder{
     TextView nick,capturados;
     public JugadorViewHolder(@NonNull View itemView){
         super(itemView);
-
         nick = itemView.findViewById(R.id.nick);
-        capturados = itemView.findViewById(R.id.capturados);
-        imagen = itemView.findViewById(R.id.imagen);
+        capturados = itemView.findViewById(R.id.cap);
+        imagen = itemView.findViewById(R.id.img);
     }
 }

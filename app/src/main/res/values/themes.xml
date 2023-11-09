@@ -1,10 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Contador" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.Contador" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-    <style name="Theme.Contador" parent="Base.Theme.Contador">
+    <style name="Theme.Contador" parent="Base.Theme.Contador" />
+    <style name="AppTheme" parent="Theme.Material3.DayNight">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <!-- Otros atributos de estilo aquí -->
+        <item name="android:buttonStyle">@style/RoundedButtonStyle</item>
+    </style>
+    <!-- Define el estilo personalizado para los botones con cornerRadius -->
+    <style name="ActionBarStyle" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="android:backgroundTint">#1AA67A</item>
+    </style>
 
+    <!-- Define el estilo personalizado para los botones con cornerRadius -->
+    <style name="RoundedButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">#1AA67A</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!-- Ajusta el radio de las esquinas según tus preferencias -->
+        <item name="android:radius">100dp</item>
     </style>
 </resources>

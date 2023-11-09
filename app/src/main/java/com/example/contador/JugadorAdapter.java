@@ -27,8 +27,8 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull JugadorViewHolder holder, int position) {
         holder.nick.setText(jugadores.get(position).getNick());
-        holder.nick.setText(jugadores.get(position).getImagen());
-        holder.nick.setText(jugadores.get(position).getCapturas());
+        holder.imagen.setImageResource(jugadores.get(position).getImagen());
+        holder.capturados.setText(jugadores.get(position).getCapturas());
     }
 
     @Override
