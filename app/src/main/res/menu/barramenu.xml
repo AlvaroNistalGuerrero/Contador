@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mp1"
+        android:title="Agrandar"/>
+    <item
+        android:id="@+id/mp2"
+        android:title="Empequeñecer"/>
+
+
+    <item
+        android:title="color">
+        <menu>
+            <item
+                android:id="@+id/mp4"
+                android:title="Rojo"/>
+            <item
+                android:id="@+id/mp5"
+                android:title="Amarillo"/>
+            <item
+                android:id="@+id/mp6"
+                android:title="Blanco"/>
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/mp3"
+        android:title="Volver Inicio"/>
+
+
+
+</menu>

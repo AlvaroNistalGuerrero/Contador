@@ -5,6 +5,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,9 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.SparseIntArray;
+import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.TextureView;
 import android.view.View;
 import android.view.animation.Animation;
@@ -44,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     int mejoras;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,15 +56,12 @@ public class MainActivity extends AppCompatActivity {
         pokeball_image = (ImageView) findViewById(R.id.pokeball_image);
         botonMejora1 = (Button) findViewById(R.id.button1);
         contador = (TextView) findViewById(R.id.textcontador);
-        buttonSalir = (Button) findViewById(R.id.buttonSalir);
+        //buttonSalir = (Button) findViewById(R.id.buttonSalir);
         contador.setText("" + cont);
         segundero();
         /*
         Bloque del recyvledView
          */
-
-
-
 //        if(extras.isEmpty()){ // estoy entrando al activty main por primera vez y no tengo que cargar datos,,, isEmpty es como un == null
 //            //hay que mirar la memoria interna y poner cuantas monedas teniamos la ultima vez
 //        }else{
@@ -70,17 +71,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void irMenuInicio(View v) {
-        finish();
-    }
+//    public void irMenuInicio(View v) {
+//        finish();
+//    }
 
     public void IrMenuDeMejoras(View v) {
         Intent intent = new Intent(this, MenuDeMejoras.class);
-        intent.putExtra("pts" ,contador.getText());
+        intent.putExtra("pts", contador.getText());
+
+        startActivityForResult(intent, 100);
         intent.putExtra("update", botonMejora1.getText());
         startActivity(intent);
+
     }
-    public void irRecycledView(View v){
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 100) {
+            if (resultCode == Activity.RESULT_OK) {
+                Bundle dt = data.getExtras();
+                contador.setText(dt.getString("mj"));
+            }
+        }
+    }
+
+    public void irRecycledView(View v) {
         Intent i = new Intent(this, Recycled_vista.class);    // Intent se usa para hacer un salto de actividad
         startActivity(i);
     }
@@ -154,4 +170,43 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    Para mi barramenu
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.barramenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int ns = item.getItemId();
+        float valor;
+        if (ns == R.id.mp1) {
+            valor = contador.getTextSize();
+            valor = valor + 10;
+            contador.setTextSize(TypedValue.COMPLEX_UNIT_PX, valor);
+            return true;
+        } else if (ns == R.id.mp2) {
+            valor = contador.getTextSize();
+            valor = valor - 10;
+            contador.setTextSize(TypedValue.COMPLEX_UNIT_PX, valor);
+            return true;
+        } else if (ns == R.id.mp3) {
+            finish();
+            return true;
+        } else if (ns == R.id.mp4) {
+            contador.setTextColor(Color.RED);
+            return true;
+        } else if (ns == R.id.mp5) {
+            contador.setTextColor(Color.YELLOW);
+            return true;
+        } else if (ns == R.id.mp6) {
+            contador.setTextColor(Color.WHITE);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
 }

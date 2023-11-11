@@ -21,14 +21,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="92dp"
         android:gravity="center"
-        android:text="  Nombre      Pokemons Capturados"
+        android:text="   Nombre      Pokemons Capturados"
         android:textColor="@color/white"
         android:textSize="19dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="510dp"
+        android:layout_height="364dp"
         android:layout_marginTop="30dp"
         android:textColor="@color/white"
         tools:ignore="MissingConstraints" />

@@ -70,7 +70,7 @@
                 android:layout_height="71dp"
                 android:layout_marginLeft="0dp"
                 android:backgroundTint="#585858"
-                android:onClick="mejora1"
+                android:onClick="retornaMejora1"
                 android:text="100 pokemons"
                 android:textColor="#FFFF"
                 android:textSize="15sp"

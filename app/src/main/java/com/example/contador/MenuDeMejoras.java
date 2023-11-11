@@ -3,6 +3,7 @@ package com.example.contador;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,11 +27,10 @@ public class MenuDeMejoras extends AppCompatActivity {
 
     }
     public void retornaMejora1(View v){
-       Intent intent = new Intent(this, MainActivity.class);
-       MainActivity m = new MainActivity();
-//       intent.putExtra("up", );
-       startActivity(intent);
-//        setResult(RESULT_OK, intent);
+       Intent intent = new Intent();
+       intent.putExtra("mj", image_name.getText().toString());
+       setResult(Activity.RESULT_OK,intent);
+       finish();
     }
 
     public void Atras(View v) {

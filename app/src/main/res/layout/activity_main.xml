@@ -7,7 +7,6 @@
     android:background="#3c3c3c"
     tools:context=".MainActivity">
 
-
     <TextView
         android:id="@+id/textcontador"
         android:layout_width="392dp"
@@ -22,25 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.054" />
-
-
-    <Button
-        android:id="@+id/buttonSalir"
-        android:layout_width="139dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#585858"
-        android:onClick="irMenuInicio"
-        android:text="SALIR"
-        android:textColor="#FFFF"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.996"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-
-        />
 
 
     <ImageView
@@ -59,8 +39,8 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="262dp"
-        android:layout_height="147dp"
+        android:layout_width="247dp"
+        android:layout_height="140dp"
         android:backgroundTint="#585858"
         android:onClick="IrMenuDeMejoras"
         android:text="MEJORAS"
@@ -72,12 +52,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.576" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <Button
         android:id="@+id/ranking"
-        android:layout_width="152dp"
-        android:layout_height="61dp"
+        android:layout_width="213dp"
+        android:layout_height="83dp"
         android:backgroundTint="#585858"
         android:onClick="irRecycledView"
         android:text="RANKING"
@@ -85,11 +65,11 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.917" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
