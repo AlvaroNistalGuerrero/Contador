@@ -4,20 +4,43 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".ApuntarMisRecords">
+    tools:context=".ApuntarMisRecords"
+    android:background="#3c3c3c">
     <EditText
         android:id="@+id/etLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nuevo record personal"/>
+        android:hint="Nuevo record personal"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"/>
     <Button
         android:id="@+id/btnAgregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Añadir"/>
+        android:backgroundTint="#585858"
+        android:onClick="onClick"
+        android:text="AÑADIR"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#585858"
+        android:onClick="Volver"
+        android:text="VOLVER"
+        android:textColor="#FFFF"
+        android:textSize="15sp"
+
+        />
+
     <ListView
         android:id="@+id/ranking"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="575dp"
+        android:background="@color/white"
+        android:cacheColorHint="@color/white">
+
+
+    </ListView>
 
 </LinearLayout>

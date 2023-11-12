@@ -35,7 +35,7 @@ public class PantallaInicio extends AppCompatActivity {
             Intent i = new Intent(this, MainActivity.class);    // Intent se usa para hacer un salto de actividad
             startActivity(i);
         }
-    public void ApuntarMisRecords(View v) {
+        public void ApuntarMisRecords(View v) {
         Intent i = new Intent(this, ApuntarMisRecords.class);    // Intent se usa para hacer un salto de actividad
         startActivity(i);
     }

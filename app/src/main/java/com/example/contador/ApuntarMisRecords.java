@@ -1,7 +1,6 @@
 package com.example.contador;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,13 +10,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApuntarMisRecords extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener{
+public class ApuntarMisRecords extends AppCompatActivity {//implements View.OnClickListener, AdapterView.OnItemClickListener{
 
     private Button mbAñadir;
     private ListView mListV;
@@ -33,13 +31,13 @@ public class ApuntarMisRecords extends AppCompatActivity implements View.OnClick
 
 
         mbAñadir = findViewById(R.id.btnAgregar);
-        mbAñadir.setOnClickListener(this);
+        //mbAñadir.setOnClickListener(this);
         mListV = findViewById(R.id.ranking);
-        mListV.setOnClickListener(this);
+        //mListV.setOnClickListener(this);
         mEditT = findViewById(R.id.etLista);
     }
 
-    @Override
+
     public void onClick(View view) {
 
         if (view.getId() == R.id.btnAgregar) {
@@ -50,10 +48,12 @@ public class ApuntarMisRecords extends AppCompatActivity implements View.OnClick
             mListV.setAdapter(mAdapter);
         }
     }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-        Toast.makeText(this, "Item Clicked " +position, Toast.LENGTH_SHORT).show();
-
+    public void Volver (View v){
+        finish();
     }
+
+//    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//        Toast.makeText(this, "Item Clicked " +position, Toast.LENGTH_SHORT).show();
+//
+//    }
 }

@@ -24,16 +24,13 @@ public class MenuDeMejoras extends AppCompatActivity {
         Bundle param = getIntent().getExtras();
         puntos = param.getInt("pts");
         image_name.setText(" " + param.getString("pts"));
-
     }
-    public void retornaMejora1(View v){
-       Intent intent = new Intent();
-       intent.putExtra("mj", image_name.getText().toString());
-       setResult(Activity.RESULT_OK,intent);
-       finish();
+    public void retornaMejora1(View v) {
+        Intent intent = new Intent();
+        intent.putExtra("mj", image_name.getText().toString());
+        setResult(Activity.RESULT_OK, intent);
     }
-
     public void Atras(View v) {
-        finish();
+            finish();
     }
 }

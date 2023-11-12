@@ -1,26 +1,20 @@
 package com.example.contador;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
+
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.SparseIntArray;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.TextureView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
@@ -30,23 +24,19 @@ import android.widget.TextView;
 import android.os.Bundle;
 
 import java.math.BigInteger;
-import java.text.BreakIterator;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     TextView contador;
     Button botonMejora1;
-    Button buttonSalir;
+    //Button buttonSalir;
     ImageView pokeball_image;
     BigInteger cont = BigInteger.ZERO;
     int valorClick = 1;
     int costeBillete = 100;
     int incremento = 1;
-    int mejoras;
 
 
     @Override
@@ -65,12 +55,8 @@ public class MainActivity extends AppCompatActivity {
 //        if(extras.isEmpty()){ // estoy entrando al activty main por primera vez y no tengo que cargar datos,,, isEmpty es como un == null
 //            //hay que mirar la memoria interna y poner cuantas monedas teniamos la ultima vez
 //        }else{
-//
 //        }
-
     }
-
-
 //    public void irMenuInicio(View v) {
 //        finish();
 //    }
@@ -111,11 +97,8 @@ public class MainActivity extends AppCompatActivity {
         cont = cont.add(BigInteger.valueOf(valorClick));
         añadeTexto();
 
-        // contador.setText("" + cont); al concatenar un String a un int,
-        // se crea un String de ambos
     }
-
-
+    
     public void mejora1(View v) {
         if (cont.compareTo(BigInteger.valueOf(costeBillete)) >= 0) {
             cont = cont.subtract(BigInteger.valueOf(costeBillete));

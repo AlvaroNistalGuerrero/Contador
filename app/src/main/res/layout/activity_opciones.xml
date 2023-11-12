@@ -11,7 +11,7 @@
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:gravity="center"
-        android:text="NO ESTA HECHO"
+        android:text=""
         android:textColor="#FFFF"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
