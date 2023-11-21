@@ -168,12 +168,12 @@ public class MainActivity extends AppCompatActivity  {
         float valor;
         if (ns == R.id.mp1) {
             valor = contador.getTextSize();
-            valor = valor + 10;
+            valor = valor + 20;
             contador.setTextSize(TypedValue.COMPLEX_UNIT_PX, valor);
             return true;
         } else if (ns == R.id.mp2) {
             valor = contador.getTextSize();
-            valor = valor - 10;
+            valor = valor - 20;
             contador.setTextSize(TypedValue.COMPLEX_UNIT_PX, valor);
             return true;
         } else if (ns == R.id.mp3) {
@@ -192,4 +192,6 @@ public class MainActivity extends AppCompatActivity  {
         return super.onOptionsItemSelected(item);
 
     }
+
+    //Login y resgistro mas progreso con un boton de guardar que te lo guarde
 }
