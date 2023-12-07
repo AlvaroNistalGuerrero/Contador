@@ -1,55 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="#3c3c3c"
-    tools:context=".Login">
+    tools:context="      "
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="2dp">
 
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editContraseña"
+        android:layout_width="302dp"
+        android:layout_height="69dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Contraseña"
         android:inputType="textPassword"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.268"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editNombre"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="@+id/editNombre"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.359" />
+
 
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editNombre"
+        android:layout_width="302dp"
+        android:layout_height="71dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Nombre"
         android:inputType="text"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253" />
+        app:layout_constraintVertical_bias="0.238" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="204dp"
-        android:layout_height="51dp"
-        android:text="REGISTRO"
+        android:id="@+id/register"
+        android:layout_width="226dp"
+        android:layout_height="73dp"
+        android:backgroundTint="#585858"
         android:onClick="Guardar"
+        android:text="RESGITRARME"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/elminar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/elminar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.636" />
+
+    <Button
+        android:id="@+id/acceder"
+        android:layout_width="226dp"
+        android:layout_height="73dp"
+        android:backgroundTint="#585858"
+        android:onClick="Guardar"
+        android:text="ACCEDER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/register"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/register"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/elminar"
+        android:layout_width="226dp"
+        android:layout_height="73dp"
+        android:backgroundTint="#585858"
+        android:onClick="Guardar"
+        android:text="ELIMINAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
-        android:backgroundTint="#585858"/>
+        app:layout_constraintVertical_bias="0.766" />
+
+    <Button
+        android:id="@+id/salir"
+        android:layout_width="369dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#585858"
+        android:onClick="SalirDelTodo"
+        android:text="SALIR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979" />
 
     <TextView
         android:id="@+id/textView2"

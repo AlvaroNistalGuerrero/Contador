@@ -1,6 +1,10 @@
 package com.example.contador;
 
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.TypedValue;
@@ -44,43 +49,51 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pokeball_image = (ImageView) findViewById(R.id.pokeball_image);
-        botonMejora1 = (Button) findViewById(R.id.button1);
+        botonMejora1 = (Button) findViewById(R.id.boton1);
         contador = (TextView) findViewById(R.id.textcontador);
         //buttonSalir = (Button) findViewById(R.id.buttonSalir);
         contador.setText("" + cont);
         segundero();
-        /*
-        Bloque del recyvledView
-         */
-//        if(extras.isEmpty()){ // estoy entrando al activty main por primera vez y no tengo que cargar datos,,, isEmpty es como un == null
-//            //hay que mirar la memoria interna y poner cuantas monedas teniamos la ultima vez
-//        }else{
-//        }
     }
-//    public void irMenuInicio(View v) {
-//        finish();
-//    }
+    private ActivityResultLauncher<Intent> launcher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            (result) -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    String mejora = result.getData().getStringExtra("mejora");
+                    switch (mejora) {
+                        case "Multi":
+                            mejora1();
+                            break;
+                    }
+                }
+            }
+    );
 
     public void IrMenuDeMejoras(View v) {
         Intent intent = new Intent(this, MenuDeMejoras.class);
         intent.putExtra("pts", contador.getText());
+        intent.putExtra("valorClick", valorClick);
+        intent.putExtra("cont", cont);
 
-        startActivityForResult(intent, 100);
-        intent.putExtra("update", botonMejora1.getText());
-        startActivity(intent);
+        launcher.launch(intent);
+        //startActivity(intent);
+
+//        startActivityForResult(intent, 100);
+//        intent.putExtra("update", botonMejora1.getText());
+
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 100) {
-            if (resultCode == Activity.RESULT_OK) {
-                Bundle dt = data.getExtras();
-                contador.setText(dt.getString("mj"));
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (resultCode == 100) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                Bundle dt = data.getExtras();
+//                contador.setText(dt.getString("mj"));
+//            }
+//        }
+//    }
 
     public void irRecycledView(View v) {
         Intent i = new Intent(this, Recycled_vista.class);    // Intent se usa para hacer un salto de actividad
@@ -99,7 +112,7 @@ public class MainActivity extends AppCompatActivity  {
 
     }
     
-    public void mejora1(View v) {
+    public void mejora1() {
         if (cont.compareTo(BigInteger.valueOf(costeBillete)) >= 0) {
             cont = cont.subtract(BigInteger.valueOf(costeBillete));
             valorClick = valorClick * 2;
@@ -108,6 +121,7 @@ public class MainActivity extends AppCompatActivity  {
             botonMejora1.setText(costeBillete + " pokemons");
             añadeTexto();
         }
+
     }
 
     public String añadeTexto() {
