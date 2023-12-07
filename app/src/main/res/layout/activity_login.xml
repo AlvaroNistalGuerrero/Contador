@@ -14,6 +14,7 @@
         android:layout_width="302dp"
         android:layout_height="69dp"
         android:ems="10"
+        android:onClick="onClick"
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:textColor="@color/white"

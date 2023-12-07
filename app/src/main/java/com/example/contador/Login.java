@@ -33,24 +33,23 @@ public class Login extends AppCompatActivity {
         botonEliminar = (Button) findViewById(R.id.elminar);
 
         final HelperBBDD helper = new HelperBBDD(this);
-        botonRegistrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                SQLiteDatabase bbdd = helper.getWritableDatabase();
+        botonRegistrar.setOnClickListener(view -> {
 
-                ContentValues values = new ContentValues();
-                values.put(EstructuraBBDD.COLUMN_USER, edN.getText().toString());
-                //Primer dato del parentesis es a donde se inserta y el segundo es QUE se inserta
-                values.put(EstructuraBBDD.COLUMN_PASSWORD, edC.getText().toString());
+            SQLiteDatabase bbdd = helper.getWritableDatabase();
 
-                //Le paso los valores añadidos en las dos lineas de arriba(44,43)
-                long newRowId = bbdd.insert(EstructuraBBDD.TABLE_USERS,null ,values);
+            ContentValues values = new ContentValues();
 
-                //para mostar un mensaje Toast por consola y verificar que esta bien insertado el dato
-                Toast.makeText(getApplicationContext(), "Registro guardado con exito el registro : " + newRowId ,Toast.LENGTH_LONG).show();
+            values.put(EstructuraBBDD.COLUMN_USER, edN.getText().toString());
+            //Primer dato del parentesis es a donde se inserta y el segundo es QUE se inserta
+            values.put(EstructuraBBDD.COLUMN_PASSWORD, edC.getText().toString());
 
-            }
+            //Le paso los valores añadidos en las dos lineas de arriba(44,43)
+            long newRowId = bbdd.insert(EstructuraBBDD.TABLE_USERS,null ,values);
+
+            //para mostar un mensaje Toast por consola y verificar que esta bien insertado el dato
+            Toast.makeText(getApplicationContext(), "Registro guardado con exito el registro : " + newRowId ,Toast.LENGTH_LONG).show();
+
         });
         botonAcceder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,11 +57,22 @@ public class Login extends AppCompatActivity {
 
             }
         });
-        botonEliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        botonEliminar.setOnClickListener(view -> {
 
-            }
+            SQLiteDatabase bbdd = helper.getWritableDatabase();
+
+            String selection = EstructuraBBDD.COLUMN_USER + " LIKE ?";
+
+            String [] selectionArgs = { edN.getText().toString() };
+
+            bbdd.delete(EstructuraBBDD.TABLE_USERS, selection, selectionArgs);
+            Toast.makeText(getApplicationContext(), "Registro borrado con exito  : " + edN ,Toast.LENGTH_LONG).show();
+
+            edN.setText("");
+            edC.setText("");
+
+
+
         });
 
 //        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE); //Vamos a editar el archivo "datos"
@@ -74,16 +84,16 @@ public class Login extends AppCompatActivity {
     /*
     Metodo para registrar los datos
      */
-//    public void Guardar(View v){
+    public void Guardar(View v){
 //        SharedPreferences p = getSharedPreferences("datos", Context.MODE_PRIVATE); //Vamos a editar el archivo "datos"
 //        SharedPreferences.Editor editor = p.edit();
 //        editor.putString("name", ed1.getText().toString());
 //        editor.putString("password", ed2.getText().toString());
 //        editor.commit();    //Confirmo que quiero guardar los datos escritos por el usuario
-//
-//        Intent intent = new Intent(this, PantallaInicio.class);
-//        startActivity(intent);
-//    }
+
+        Intent intent = new Intent(this, PantallaInicio.class);
+        startActivity(intent);
+    }
 ////    public void crearDB(View v){
 ////        HelperBD helperBD = new HelperBD(Login.this);
 ////        SQLiteDatabase db = helperBD.getWritableDatabase();
