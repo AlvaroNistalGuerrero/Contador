@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.math.BigInteger;
+
 public class EstructuraBBDD { //extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
@@ -18,6 +20,8 @@ public class EstructuraBBDD { //extends SQLiteOpenHelper {
 
     public static final String COLUMN_USER = "Usuario";
     public static final String COLUMN_PASSWORD = "Contraseña";
+
+   // public static final String COLUMN_PROGRESS = "Progreso";
 
     /*
     Especificaciones generales

@@ -5,27 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3c3c3c"
-    tools:context="      "
+    tools:context=".Login"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="2dp">
+
 
     <EditText
         android:id="@+id/editContraseña"
         android:layout_width="302dp"
         android:layout_height="69dp"
         android:ems="10"
-        android:onClick="onClick"
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editNombre"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editNombre"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
-
+        app:layout_constraintVertical_bias="0.527" />
 
     <EditText
         android:id="@+id/editNombre"
@@ -41,48 +40,46 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.393" />
 
     <Button
         android:id="@+id/register"
         android:layout_width="226dp"
         android:layout_height="73dp"
         android:backgroundTint="#585858"
-        android:onClick="Guardar"
         android:text="RESGITRARME"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/elminar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/elminar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.686" />
 
     <Button
         android:id="@+id/acceder"
         android:layout_width="226dp"
         android:layout_height="73dp"
         android:backgroundTint="#585858"
-        android:onClick="Guardar"
-        android:text="ACCEDER"
+        android:text="INICIO DE SESION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/register"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/register"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23" />
 
     <Button
         android:id="@+id/elminar"
         android:layout_width="226dp"
         android:layout_height="73dp"
         android:backgroundTint="#585858"
-        android:onClick="Guardar"
-        android:text="ELIMINAR"
+        android:text="ELIMINAR USUARIO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintHorizontal_bias="0.291"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        app:layout_constraintVertical_bias="0.844" />
 
     <Button
         android:id="@+id/salir"
@@ -100,17 +97,16 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="315dp"
-        android:layout_height="77dp"
+        android:layout_width="379dp"
+        android:layout_height="57dp"
         android:gravity="center"
-        android:text="INICIO DE SESION"
+        android:text="REGISTRO EN LA APP"
         android:textColor="@color/white"
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.066" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

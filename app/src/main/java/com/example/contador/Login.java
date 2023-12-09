@@ -48,14 +48,13 @@ public class Login extends AppCompatActivity {
             long newRowId = bbdd.insert(EstructuraBBDD.TABLE_USERS,null ,values);
 
             //para mostar un mensaje Toast por consola y verificar que esta bien insertado el dato
-            Toast.makeText(getApplicationContext(), "Registro guardado con exito el registro : " + newRowId ,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Registro guardado con exito : " + newRowId ,Toast.LENGTH_LONG).show();
 
         });
-        botonAcceder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        botonAcceder.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), InicioDeSesion.class);
+            startActivity(intent);
 
-            }
         });
         botonEliminar.setOnClickListener(view -> {
 
@@ -84,16 +83,16 @@ public class Login extends AppCompatActivity {
     /*
     Metodo para registrar los datos
      */
-    public void Guardar(View v){
-//        SharedPreferences p = getSharedPreferences("datos", Context.MODE_PRIVATE); //Vamos a editar el archivo "datos"
+    //        SharedPreferences p = getSharedPreferences("datos", Context.MODE_PRIVATE); //Vamos a editar el archivo "datos"
 //        SharedPreferences.Editor editor = p.edit();
 //        editor.putString("name", ed1.getText().toString());
 //        editor.putString("password", ed2.getText().toString());
 //        editor.commit();    //Confirmo que quiero guardar los datos escritos por el usuario
-
-        Intent intent = new Intent(this, PantallaInicio.class);
-        startActivity(intent);
-    }
+//    public void IrInicioDeSesion(View v){
+//        Intent intent = new Intent(this, InicioDeSesion.class);
+//        startActivity(intent);
+//
+//    }
 ////    public void crearDB(View v){
 ////        HelperBD helperBD = new HelperBD(Login.this);
 ////        SQLiteDatabase db = helperBD.getWritableDatabase();
