@@ -12,7 +12,9 @@ import androidx.core.app.ComponentActivity;
 
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Handler;
@@ -54,6 +56,17 @@ public class MainActivity extends AppCompatActivity  {
         //buttonSalir = (Button) findViewById(R.id.buttonSalir);
         contador.setText("" + cont);
         segundero();
+        /*
+
+         */
+//        HelperBBDD helper = new HelperBBDD(this);
+//
+//        SQLiteDatabase bbdd = helper.getWritableDatabase();
+//
+//        ContentValues values = new ContentValues();
+//        values.put(EstructuraBBDD.COLUMN_PROGRESS, contador.getText().toString());
+//
+//        long newRowId = bbdd.insert(EstructuraBBDD.TABLE_USERS,null ,values);
     }
     private ActivityResultLauncher<Intent> launcher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),

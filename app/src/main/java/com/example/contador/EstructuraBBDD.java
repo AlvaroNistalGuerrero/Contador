@@ -21,8 +21,7 @@ public class EstructuraBBDD { //extends SQLiteOpenHelper {
     public static final String COLUMN_USER = "Usuario";
     public static final String COLUMN_PASSWORD = "Contraseña";
 
-
-   // public static final String COLUMN_PROGRESS = "Progreso";
+    public static final String COLUMN_PROGRESS = "Progreso";
 
 
     /*
@@ -38,7 +37,8 @@ public class EstructuraBBDD { //extends SQLiteOpenHelper {
     public static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + EstructuraBBDD.TABLE_USERS + " (" +
                     EstructuraBBDD.COLUMN_USER + " PRIMARY KEY," +
-                    EstructuraBBDD.COLUMN_PASSWORD + TEXT_TYPE + " )";
+                    EstructuraBBDD.COLUMN_PASSWORD + TEXT_TYPE + SEP +
+                    EstructuraBBDD.COLUMN_PROGRESS + TEXT_TYPE + " )";
 
     public static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + EstructuraBBDD.TABLE_USERS;
