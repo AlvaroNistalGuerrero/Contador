@@ -32,7 +32,8 @@ public class Login extends AppCompatActivity {
         botonAcceder = (Button) findViewById(R.id.acceder);
         botonEliminar = (Button) findViewById(R.id.elminar);
 
-        final HelperBBDD helper = new HelperBBDD(this);
+        HelperBBDD helper = new HelperBBDD(this);
+
 
         botonRegistrar.setOnClickListener(view -> {
 
@@ -59,6 +60,7 @@ public class Login extends AppCompatActivity {
         botonEliminar.setOnClickListener(view -> {
 
             SQLiteDatabase bbdd = helper.getWritableDatabase();
+
 
             String selection = EstructuraBBDD.COLUMN_USER + " LIKE ?";
 

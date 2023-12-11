@@ -12,10 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Contador"
         tools:targetApi="31">
+
         <activity android:name=".Recycled_vista"
             android:exported="false">
 
         </activity>
+
         <activity android:name=".ApuntarMisRecords"
             android:exported="false"/>
         <activity
@@ -49,8 +51,9 @@
             android:label="CONTADOR"/>
         <activity
             android:name=".InicioDeSesion"
-            android:exported="false"
+            android:exported="true"
             android:label="LOGIN"/>
+
     </application>
 
 </manifest>

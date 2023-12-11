@@ -19,7 +19,7 @@ import java.math.BigInteger;
 
 public class MenuDeMejoras extends AppCompatActivity {
     TextView image_name;
-    Button selectButton;
+    Button BotonMejora;
     int puntos;
 
     @Override
@@ -27,13 +27,16 @@ public class MenuDeMejoras extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_de_mejoras);
         image_name = (TextView) findViewById(R.id.image_name);
+        BotonMejora = (Button) findViewById(R.id.selectButton);
         Bundle param = getIntent().getExtras();
         puntos = param.getInt("pts");
         image_name.setText(" " + param.getString("pts"));
-        selectButton.setOnClickListener(v ->{
+        BotonMejora.setOnClickListener(v ->{
             Intent intent = new Intent();
             intent.putExtra("mejora", "Multi");
             setResult(MenuDeMejoras.RESULT_OK, intent);
+//            costeBillete = costeBillete + 20;
+//            BotonMejora.setText(costeBillete + " pokemons");
             finish();
         } );
     }

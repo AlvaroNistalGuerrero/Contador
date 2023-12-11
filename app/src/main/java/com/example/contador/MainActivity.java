@@ -8,7 +8,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.core.app.ComponentActivity;
 
 
 import android.app.Activity;
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity  {
                 }
             }
     );
-
     public void IrMenuDeMejoras(View v) {
         Intent intent = new Intent(this, MenuDeMejoras.class);
         intent.putExtra("pts", contador.getText());
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity  {
             valorClick = valorClick * 2;
             contador.setText("" + cont);
             costeBillete = costeBillete + 20;
-            botonMejora1.setText(costeBillete + " pokemons");
+//          botonMejora1.setText(costeBillete + " pokemons");
             añadeTexto();
         }
 

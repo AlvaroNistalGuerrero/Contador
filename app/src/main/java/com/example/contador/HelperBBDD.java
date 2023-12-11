@@ -15,19 +15,22 @@ public class HelperBBDD extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL(EstructuraBBDD.SQL_DELETE_ENTRIES);
-        onCreate(sqLiteDatabase);   //La agrego
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL(EstructuraBBDD.SQL_DELETE_ENTRIES);
+        onCreate(db);   //La agrego
+    }
+    public void downGrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db,oldVersion,newVersion);   //La agrego
     }
 
     public Boolean checkNombre(String nombre){
         SQLiteDatabase DdBb =  this.getWritableDatabase();
-        Cursor c = DdBb.rawQuery("SELECT * FROM POKEMON_BBDD WHERE Usuario =?", new String[]{nombre});
+        Cursor c = DdBb.rawQuery("SELECT * FROM t_users WHERE Usuario =?", new String[]{nombre});
 
         if (c.getCount() > 0) {
             return true;
@@ -38,7 +41,7 @@ public class HelperBBDD extends SQLiteOpenHelper {
 
     public Boolean checkContraseña(String nombre,String contraseña){
         SQLiteDatabase DdBb =  this.getWritableDatabase();
-        Cursor c = DdBb.rawQuery("SELECT * FROM POKEMON_BBDD WHERE Usuario =? AND  Contraseña =?", new String[]{nombre,contraseña});
+        Cursor c = DdBb.rawQuery("SELECT * FROM t_users WHERE Usuario =? AND  Contraseña =?", new String[]{nombre,contraseña});
 
         if (c.getCount() > 0) {
             return true;
