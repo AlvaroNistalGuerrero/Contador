@@ -28,20 +28,20 @@ public class InicioDeSesion extends AppCompatActivity {
 
         botonSignIn.setOnClickListener(view -> {
 
-//            String usuario = edN2.getText().toString();
-//            String contraseña = edC2.getText().toString();
-//
-//            if(usuario.equals("")||contraseña.equals("")) {
-//                Toast.makeText(InicioDeSesion.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
-//            }
-//            if (helper.checkContraseña(usuario,contraseña) == true && helper.checkNombre(usuario) == true){
-//                Toast.makeText(InicioDeSesion.this, "Acceso identificado", Toast.LENGTH_LONG).show();
+            String usuario = edN2.getText().toString();
+            String contraseña = edC2.getText().toString();
+
+            if(usuario.equals("")||contraseña.equals("")) {
+                Toast.makeText(InicioDeSesion.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
+            }
+            if (helper.checkContraseña(usuario,contraseña) == true && helper.checkNombre(usuario) == true){
+                Toast.makeText(InicioDeSesion.this, "Acceso identificado", Toast.LENGTH_LONG).show();
                       Intent intent = new Intent(getApplicationContext(),PantallaInicio.class);
                       startActivity(intent);
-//            }else{
-//                Toast.makeText(InicioDeSesion.this, "Credenciales no coinciden, registrese si no lo ha hecho", Toast.LENGTH_LONG).show();
-//
-//            }
+            }else{
+                Toast.makeText(InicioDeSesion.this, "Credenciales no coinciden, registrese si no lo ha hecho", Toast.LENGTH_LONG).show();
+
+            }
 
         });
 
